@@ -1,0 +1,274 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{60EBE6EA-9E4E-46E9-9C56-82AB704D9EDD}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>OpticalFlowMethods</RootNamespace>
+    <AssemblyName>OpticalFlowMethods</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="OpenCL.Net">
+      <HintPath>..\packages\OpenCL.Net.2.2.9.0\lib\net40\OpenCL.Net.dll</HintPath>
+    </Reference>
+    <Reference Include="OpenCvSharp">
+      <HintPath>..\packages\OpenCvSharp-AnyCPU.2.4.10.20170306\lib\net45\OpenCvSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="OpenCvSharp.Blob">
+      <HintPath>..\packages\OpenCvSharp-AnyCPU.2.4.10.20170306\lib\net45\OpenCvSharp.Blob.dll</HintPath>
+    </Reference>
+    <Reference Include="OpenCvSharp.CPlusPlus">
+      <HintPath>..\packages\OpenCvSharp-AnyCPU.2.4.10.20170306\lib\net45\OpenCvSharp.CPlusPlus.dll</HintPath>
+    </Reference>
+    <Reference Include="OpenCvSharp.Extensions">
+      <HintPath>..\packages\OpenCvSharp-AnyCPU.2.4.10.20170306\lib\net45\OpenCvSharp.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="OpenCvSharp.UserInterface">
+      <HintPath>..\packages\OpenCvSharp-AnyCPU.2.4.10.20170306\lib\net45\OpenCvSharp.UserInterface.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Horn_Schunck.cs" />
+    <Compile Include="HSDisplayForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HSDisplayForm.Designer.cs">
+      <DependentUpon>HSDisplayForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HSParameters_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HSParameters_Form.Designer.cs">
+      <DependentUpon>HSParameters_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HSPlayVideoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HSPlayVideoForm.Designer.cs">
+      <DependentUpon>HSPlayVideoForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HSPyramidForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HSPyramidForm.Designer.cs">
+      <DependentUpon>HSPyramidForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="L1DisplayForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="L1DisplayForm.Designer.cs">
+      <DependentUpon>L1DisplayForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="L1Flow.cs" />
+    <Compile Include="L1Parameters_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="L1Parameters_Form.Designer.cs">
+      <DependentUpon>L1Parameters_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="L1PlayVideoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="L1PlayVideoForm.Designer.cs">
+      <DependentUpon>L1PlayVideoForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="L1PyramidForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="L1PyramidForm.Designer.cs">
+      <DependentUpon>L1PyramidForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="L1_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="L1_Form.Designer.cs">
+      <DependentUpon>L1_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LGDisplayForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LGDisplayForm.Designer.cs">
+      <DependentUpon>LGDisplayForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LGFlow.cs" />
+    <Compile Include="LGParameters_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LGParameters_Form.Designer.cs">
+      <DependentUpon>LGParameters_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LGPlayVideoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LGPlayVideoForm.Designer.cs">
+      <DependentUpon>LGPlayVideoForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LGPyramidForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LGPyramidForm.Designer.cs">
+      <DependentUpon>LGPyramidForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LG_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LG_Form.Designer.cs">
+      <DependentUpon>LG_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Main_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Main_Form.Designer.cs">
+      <DependentUpon>Main_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HS_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HS_Form.Designer.cs">
+      <DependentUpon>HS_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Test_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Test_Form.Designer.cs">
+      <DependentUpon>Test_Form.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="HSDisplayForm.resx">
+      <DependentUpon>HSDisplayForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HSParameters_Form.resx">
+      <DependentUpon>HSParameters_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HSPlayVideoForm.resx">
+      <DependentUpon>HSPlayVideoForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HSPyramidForm.resx">
+      <DependentUpon>HSPyramidForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="L1DisplayForm.resx">
+      <DependentUpon>L1DisplayForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="L1Parameters_Form.resx">
+      <DependentUpon>L1Parameters_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="L1PlayVideoForm.resx">
+      <DependentUpon>L1PlayVideoForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="L1PyramidForm.resx">
+      <DependentUpon>L1PyramidForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="L1_Form.resx">
+      <DependentUpon>L1_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LGDisplayForm.resx">
+      <DependentUpon>LGDisplayForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LGParameters_Form.resx">
+      <DependentUpon>LGParameters_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LGPlayVideoForm.resx">
+      <DependentUpon>LGPlayVideoForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LGPyramidForm.resx">
+      <DependentUpon>LGPyramidForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LG_Form.resx">
+      <DependentUpon>LG_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Main_Form.resx">
+      <DependentUpon>Main_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HS_Form.resx">
+      <DependentUpon>HS_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Test_Form.resx">
+      <DependentUpon>Test_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\FlowProcessorAPI\FlowProcessorAPI.csproj">
+      <Project>{8f07c364-17d1-453a-af7d-a8e05e5d7335}</Project>
+      <Name>FlowProcessorAPI</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\OpticalFlowProject\MainOpticalFlowProject.csproj">
+      <Project>{98a09e7f-2e19-40df-bdd7-a2898df71fd8}</Project>
+      <Name>MainOpticalFlowProject</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\interval.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\piramis.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\piramis1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Schematic-diagram-of-Gauss-Pyramid-Pyramid-image-selection.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\logo.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{8F07C364-17D1-453A-AF7D-A8E05E5D7335}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>FlowProcessorAPI</RootNamespace>
+    <AssemblyName>FlowProcessorAPI</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="OpenCL.Net, Version=2.2.9.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\OpenCL.Net.2.2.9.0\lib\net40\OpenCL.Net.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CLProcessor.cs" />
+    <Compile Include="FileHandler.cs" />
+    <Compile Include="FlowArray.cs" />
+    <Compile Include="Interfaces\IFileHandler.cs" />
+    <Compile Include="Interfaces\IFlowArray.cs" />
+    <Compile Include="Interfaces\IKernelStrings.cs" />
+    <Compile Include="Interfaces\IProcessor.cs" />
+    <Compile Include="Interfaces\ISimpleImage.cs" />
+    <Compile Include="KernelStrings.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SimpleImage.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="OpenCL kernels\AdvancedFlow.cl" />
+    <None Include="OpenCL kernels\FlowImageCreator.cl" />
+    <None Include="OpenCL kernels\DownSample.cl" />
+    <None Include="OpenCL kernels\DownSampleTwo.cl" />
+    <None Include="OpenCL kernels\Flow.cl" />
+    <None Include="OpenCL kernels\FlowDecorator.cl" />
+    <None Include="OpenCL kernels\GaussianBlur1.cl" />
+    <None Include="OpenCL kernels\GaussianBlur1Two.cl" />
+    <None Include="OpenCL kernels\GradX.cl" />
+    <None Include="OpenCL kernels\ModifyFlowImage.cl" />
+    <None Include="OpenCL kernels\Monochrome.cl" />
+    <None Include="OpenCL kernels\MonochromeTwo.cl" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\packages\OpenCL.Net.2.2.9.0\build\net40\OpenCL.Net.targets" Condition="Exists('..\packages\OpenCL.Net.2.2.9.0\build\net40\OpenCL.Net.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\OpenCL.Net.2.2.9.0\build\net40\OpenCL.Net.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\OpenCL.Net.2.2.9.0\build\net40\OpenCL.Net.targets'))" />
+  </Target>
+</Project>
